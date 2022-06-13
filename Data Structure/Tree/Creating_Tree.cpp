@@ -1,25 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+template < typename T>
+class TreeNode{
+    public:
+    int data;
+    vector < TreeNode<T>*> children;
 
-struct Node{
-    int key;
-    Node *left;
-    Node *right;
-    // Constructor for Node
-    Node( int k ){
-        key = k;
-        left = right = NULL;
+    // Constructor for initializing the data
+    TreeNode(T data ){
+        this -> data = data;
     }
 };
 
-// Inorder Traversal :
-void inorder( Node *root){
-    inorder( root -> left);
-    cout<<(root -> key)<<" ";
-    inorder( root -> right);
-}
-
+#define fo(i,n) for(i=0;i<n;i++)
+#define pb push_back
+#define F first
+#define S second
 typedef long long ll;
 typedef long double ld;
 
@@ -32,6 +29,15 @@ int main(){
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout); 
     #endif
+
+    // Creating independent Nodes
+    TreeNode <int>* root = new TreeNode<int>(1);
+    TreeNode <int>* node1 = new TreeNode<int>(2);
+    TreeNode <int>* node2 = new TreeNode<int>(3);
+    
+    // Creating connection b/w root and children
+    root -> children.push_back(node1);
+    root -> children.push_back(node2);
 
 
     
